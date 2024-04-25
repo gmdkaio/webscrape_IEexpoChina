@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 import re
-from links import links
+from array_1 import links
 
 def find_data(url):
     response = requests.get(url)
