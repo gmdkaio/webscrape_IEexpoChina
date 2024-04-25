@@ -1,6 +1,5 @@
-from bs4 import BeautifulSoup
-import pandas as pd
 import requests
+from bs4 import BeautifulSoup
 import re
 
 def filter_and_transform_links(links):
@@ -29,8 +28,5 @@ for url in urls:
     
     all_links.extend(transformed_links)
 
-df = pd.DataFrame({'Links': all_links})
-
-df.to_csv('exhibitor_links.csv', index=False)
-
-print("Links saved to 'exhibitor_links.csv'")
+with open('links.py', 'w') as f:
+    f.write("links = " + str(all_links))
